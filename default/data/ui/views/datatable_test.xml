@@ -1,0 +1,16 @@
+<dashboard script='index.js'>
+  <label>DataTable Test</label>
+  <search id='dataTableSearch'>
+    <query>index=_internal sourcetype=splunkd source="/Applications/Splunk/var/log/splunk/splunkd.log"
+| dedup _time, event_message | table _time, event_message</query>
+    <earliest>0</earliest>
+    <sampleRatio>1</sampleRatio>
+  </search>
+  <row>
+    <html>
+      <div id="tableWrapper">
+        <p style="text-align: center;">Loading...</p>
+      </div>
+    </html>
+  </row>
+</dashboard>

@@ -1,0 +1,22 @@
+<script type="text/x-template" id="data-table-template">
+    <table cellpadding="0" cellspacing="0" border="0"
+           class="table tale-chrome table-striped display dataTable"
+           id="table">
+        <thead>
+            <tr role="row">
+                <th>Time</th>
+                <th>Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for(var i=0; i < data.length; i++) { %>
+                <tr>
+                    <td><%- data[i][0] %></td>
+                    <td><%- data[i][1] %></td>
+                </tr>
+            <% } %>
+        <body>
+    </table>
+</script>
+
+<div id="data-table-wrapper"></div>
