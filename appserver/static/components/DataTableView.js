@@ -32,6 +32,8 @@ define([
             options = this.options;
             this.data = options.data;
             this.data_table = null;
+            // pull the headers array passed in when we created the new instance of the DataTable View in index.js
+            this.headers = options.headers;
         },
 
         render: function () {
@@ -60,9 +62,10 @@ define([
                 },
                 "bStateSave": true,          // sets cookie to save table display information
                 "aaSorting": [[1, "asc"]],  // controls sorting
-                "aoColumns": [
-                    null,  // Time Column
-                    null,  // Message Column
+                // Set your columns here pulling out the values from the index of header tokens
+                "columns": [
+                    { "title" : this.headers[0] },
+                    { "title" : this.headers[1] }
                 ]
             });
         },
